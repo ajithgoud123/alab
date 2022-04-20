@@ -405,7 +405,7 @@ server_tls_key_file = /etc/pgbouncer/server.key
         config.set_main_option('sqlalchemy.url', settings.SQL_ALCHEMY_CONN.replace('%', '%%'))
         script_ = ScriptDirectory.from_config(config)
 
-        timeout=360
+        timeout=660
 
         with settings.engine.connect() as connection:
             context = MigrationContext.configure(connection)
