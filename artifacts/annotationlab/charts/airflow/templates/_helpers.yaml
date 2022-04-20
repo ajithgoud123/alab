@@ -407,7 +407,7 @@ server_tls_key_file = /etc/pgbouncer/server.key
 
         timeout=180
 
-        with settings.engine.connect() as connection:
+        with engine.connect() as connection:
             context = MigrationContext.configure(connection)
             ticker = 0
             while True:
