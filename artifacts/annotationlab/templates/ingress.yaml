@@ -11,9 +11,8 @@ metadata:
   name: {{ include "annotationlab.fullname" . }}
   labels:
     {{- include "annotationlab.labels" . | nindent 4 }}
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: '{{ .Values.ingress.uploadLimitInMegabytes }}m'
-    kubernetes.io/ingress.class: nginx
+#  annotations:
+#    nginx.ingress.kubernetes.io/proxy-body-size: '{{ .Values.ingress.uploadLimitInMegabytes }}m'
   {{- with .Values.ingress.annotations }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
